@@ -1,33 +1,32 @@
-// Mensajes románticos que aparecerán en el modal de forma aleatoria
-const mensajesRomanticos = [
-    "Eres la luz que ilumina mis días.",
-    "Nuestra amistad es un tesoro que atesoro.",
-    "Cada momento contigo es especial.",
-    "Gracias por ser quien eres, única y maravillosa.",
-    "Tenerte en mi vida es una bendición."
-];
+// Obtener el modal
+var modal = document.getElementById("videoModal");
 
-// Elementos del DOM
-const modal = document.getElementById("modalMensaje");
-const modalMensaje = document.getElementById("mensajeModal");
-const abrirModalBtn = document.getElementById("abrirModalBtn");
-const cerrarModalBtn = document.getElementById("cerrarModalBtn");
+// Obtener el botón que abre el modal
+var btn = document.getElementById("openModal");
 
-// Función para abrir el modal con un mensaje aleatorio
-abrirModalBtn.addEventListener('click', () => {
-    const mensaje = mensajesRomanticos[Math.floor(Math.random() * mensajesRomanticos.length)];
-    modalMensaje.innerText = mensaje;
+// Obtener el elemento <span> que cierra el modal
+var span = document.getElementsByClassName("close")[0];
+
+// Cuando el usuario hace clic en la portada, abre el modal 
+btn.onclick = function() {
     modal.style.display = "block";
-});
+}
 
-// Función para cerrar el modal
-cerrarModalBtn.addEventListener('click', () => {
+// Cuando el usuario hace clic en <span> (x), cierra el modal
+span.onclick = function() {
     modal.style.display = "none";
-});
+    // Detiene el video al cerrar el modal
+    var video = modal.querySelector('video');
+    video.pause();
+    video.currentTime = 0; // Reinicia el video al cerrar
+}
 
-// Cerrar el modal si se hace clic fuera de él
+// Cuando el usuario hace clic fuera del modal, cierra el modal
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
+        var video = modal.querySelector('video');
+        video.pause();
+        video.currentTime = 0;
     }
-};
+}

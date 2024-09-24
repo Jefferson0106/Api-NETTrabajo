@@ -24,6 +24,7 @@
         <img src="laura.png" alt="Momento 1" class="foto">
         <img src="laura1.png" alt="Momento 2" class="foto">
         <img src="laura2.png" alt="Momento 3" class="foto">
+        <img src="laura3.png" alt="Momento 3" class="foto">
     </section>
     
     <section class="mensaje">
@@ -48,19 +49,40 @@
             <div class="circle-petal petal4"></div>
             <div class="circle-petal petal5"></div>
         </div>
-        <img src="laura1.png" alt="Foto circular" class="foto-circular">
+        <img src="bts.png" alt="Foto circular" class="bts">
     </section>
 
-    <!-- Botón para abrir el modal -->
-    <button id="abrirModalBtn" class="boton-mensaje-romantico">Mostrar un mensaje especial</button>
+ 
     
-    <!-- Modal -->
-    <div id="modalMensaje" class="modal">
+    <section class="galeria">
+        <img src="laura4.png" alt="Momento 1" class="foto">
+        <img src="laura5.png" alt="Momento 2" class="foto">
+        <img src="laura6.png" alt="Momento 3" class="foto">
+        <img src="laura7.png" alt="Momento 3" class="foto">
+    </section>
+    <section class="mensaje">
+    <p class="texto">
+        En cada paso que das, quiero que sientas el amor que te rodea, como un cálido abrazo de pétalos amarillos que caen suavemente del cielo. 
+        Eres la melodía que alegra mis días y la inspiración detrás de mis sueños. 
+        Con cada recuerdo que creamos, me doy cuenta de lo afortunada que soy de tenerte a mi lado. 
+        Tu risa es como música para mi alma, y tu amistad, un tesoro invaluable que guardo en mi corazón. 
+        ¡Que nunca falten en tu vida momentos llenos de alegría y sorpresas! 
+        Siempre estaré aquí para celebrar contigo, para reír, llorar y crear nuevas memorias.
+    </p>
+    </section>
+    <div class="video-container">
+        <img src="play-button.png" alt="Ver video" class="play-button" id="openModal">
+    </div>
+    
+    <!-- Modal para el video -->
+    <div id="videoModal" class="modal">
         <div class="modal-content">
-            <span id="cerrarModalBtn" class="cerrar">&times;</span>
-            <p id="mensajeModal"></p>
+            <span class="close">&times;</span>
+            <video controls>
+                <source src="video.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento de video.
+            </video>
         </div>
-      
     </div>
     <script src="script.js"></script>
 </body>

@@ -1,27 +1,19 @@
 /* Estilos globales */
 body {
     font-family: Arial, sans-serif;
-    background-color: #FF69B4;
+    background-color: #fff9c4;
     text-align: center;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
-    
+    overflow-x: hidden; /* Evita barras de desplazamiento lateral */
 }
 
+/* Encabezado */
 .header {
     background-color: #FF69B4;
     padding: 20px;
 }
-.bts {
-    height: 70%;
-    width: 50%;
-}
 
-.bts img { /* Asegúrate de seleccionar la etiqueta img dentro del contenedor .bts */
-    width: 100%; /* La imagen ocupa el 100% del ancho de .bts */
-    height: auto; /* Mantiene la proporción de la imagen */
-}
 .titulo {
     font-family: 'Great Vibes', cursive;
     font-size: 50px;
@@ -61,7 +53,6 @@ body {
     background-color: #fff9c4;
     border-radius: 15px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-    width: 168%;
 }
 
 .texto {
@@ -114,113 +105,92 @@ body {
     100% { transform: translateY(800px) rotate(360deg); }
 }
 
-/* Imagen circular con pétalos girando */
-.foto-circular-container {
-    position: relative;
-    margin: 50px auto;
-    width: 300px;
-    height: 300px;
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Ajusta según tu diseño */
 }
 
-.foto-circular {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    border: 5px solid #FFD700; /* Borde dorado */
-    object-fit: cover;
-    box-shadow: 0 0 30px rgba(255, 223, 0, 0.8); /* Efecto de brillo */
-    animation: glow 2s ease-in-out infinite alternate;
+.play-button {
+    cursor: pointer;
+    width: 100px; /* Ajusta el tamaño de la imagen del botón de reproducción */
 }
 
-@keyframes glow {
-    from { box-shadow: 0 0 15px rgba(255, 223, 0, 0.8); }
-    to { box-shadow: 0 0 30px rgba(255, 223, 0, 1); }
-}
-
-/* Modal */
 .modal {
-    display: none; /* Oculto por defecto */
+    display: none; /* Escondido por defecto */
     position: fixed; 
-    z-index: 1000; /* Se posiciona sobre todo lo demás */
+    z-index: 1; 
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro */
-    overflow: auto; /* Habilita el scroll si es necesario */
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
 }
 
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto; /* Centra el modal en la pantalla */
+    margin: 15% auto; 
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
-    max-width: 600px;
-    border-radius: 10px;
-    text-align: center;
-    font-size: 20px;
-    color: #FF1493;
+    width: 80%; /* Ajusta el tamaño del modal */
+    max-width: 600px; /* Ancho máximo del modal */
+    display: flex; /* Añadir esta línea */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
 }
 
-.cerrar {
+.close {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
 
-.cerrar:hover,
-.cerrar:focus {
-    color: #000;
+.close:hover,
+.close:focus {
+    color: black;
     text-decoration: none;
     cursor: pointer;
 }
 
-/* Botón para abrir el modal */
-.boton-mensaje-romantico {
-    padding: 10px 20px;
-    background-color: #FF69B4;
-    color: white;
-    font-size: 18px;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    margin-top: 20px;
+video {
+    width: auto; /* Cambiar a auto para mantener la proporción */
+    height: auto; /* Cambiar a auto para mantener la proporción */
+    max-width: 100%; /* Asegura que el video no se desborde */
+    max-height: 400px; /* Ajusta según el tamaño deseado del video */
 }
 
-.boton-mensaje-romantico:hover {
-    background-color: #ff82c5;
-}
-@media (max-width: 768px) {
-    .header {
-        padding: 15px; /* Reduce el padding en móviles */
-        width: 153%;
+/* Media Queries para Móviles */
 
-    }
-
-    .bts {
-        width: 90%; /* Aumenta el ancho del contenedor en móviles */
-        height: auto; /* Ajusta la altura automáticamente */
-    }
-
+/* Pantallas menores a 600px (smartphones) */
+@media screen and (max-width: 600px) {
     .titulo {
-        font-size: 30px; /* Reduce el tamaño de la fuente del título */
+        font-size: 32px; /* Reduce el tamaño de la fuente para móviles */
+        padding: 15px;
+    }
+
+    .galeria {
+        flex-direction: column; /* Muestra las fotos en una columna en lugar de en fila */
+        gap: 10px;
     }
 
     .foto {
-        width: 80%; /* Ajusta el tamaño de las fotos en móviles */
+        width: 90%; /* Las fotos ocuparán el 90% del ancho de la pantalla en móviles */
+        position: relative;
+        left: 21px;
     }
-
+    .bts{
+        width: 83%;
+    }
     .mensaje {
-        margin: 20px auto;
-        padding: 15px; /* Reduce el padding */
-        font-size: 18px; /* Reduce el tamaño del texto */
-        width: 168%;
+        max-width: 95%; /* Reduce el ancho del contenedor de mensaje para móviles */
+        font-size: 18px; /* Reduce el tamaño del texto para mejor lectura */
     }
 
-    .boton-mensaje-romantico {
-        font-size: 16px; /* Ajusta el tamaño del botón */
-        padding: 8px 15px; /* Ajusta el padding del botón */
+    .texto {
+        font-size: 18px; /* Ajusta el tamaño de la fuente del mensaje */
     }
 }
