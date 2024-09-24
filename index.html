@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página para Mi Mejor Amiga</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="petal-container"> <!-- Contenedor para los pétalos cayendo -->
+        <div class="petal petal1"></div>
+        <div class="petal petal2"></div>
+        <div class="petal petal3"></div>
+        <div class="petal petal4"></div>
+        <div class="petal petal5"></div>
+    </div>
+
+    <header class="header">
+        <h1 class="titulo">¡Para Mi Mejor Amiga, la Mejor de Todas!</h1>
+    </header>
+    
+    <section class="galeria">
+        <img src="laura.png" alt="Momento 1" class="foto">
+        <img src="laura1.png" alt="Momento 2" class="foto">
+        <img src="laura2.png" alt="Momento 3" class="foto">
+    </section>
+    
+    <section class="mensaje">
+        <p class="texto">
+            Desde que nos conocimos, has llenado mi vida de risas, momentos inolvidables y recuerdos que siempre atesoraré. 
+            Eres esa amiga especial que convierte los días grises en coloridos. 
+            ¡Cada conversación, cada aventura, ha sido mejor contigo!<br><br>
+            Esta página está dedicada a ti, porque mereces todo lo bello del mundo. 
+            <span class="especial">Que lluevan pétalos amarillos</span> en tu camino, que simbolicen la felicidad, la alegría y el amor que siempre brindas a los demás.
+        </p>
+        <div>
+            <img src="unnamed.png" class="bts">
+        </div>
+    </section>
+    
+    <!-- Sección de la imagen circular con pétalos girando -->
+    <section class="foto-circular-container">
+        <div class="petal-circle-container"> <!-- Pétalos girando alrededor de la imagen -->
+            <div class="circle-petal petal1"></div>
+            <div class="circle-petal petal2"></div>
+            <div class="circle-petal petal3"></div>
+            <div class="circle-petal petal4"></div>
+            <div class="circle-petal petal5"></div>
+        </div>
+        <img src="laura1.png" alt="Foto circular" class="foto-circular">
+    </section>
+
+    <!-- Botón para abrir el modal -->
+    <button id="abrirModalBtn" class="boton-mensaje-romantico">Mostrar un mensaje especial</button>
+    
+    <!-- Modal -->
+    <div id="modalMensaje" class="modal">
+        <div class="modal-content">
+            <span id="cerrarModalBtn" class="cerrar">&times;</span>
+            <p id="mensajeModal"></p>
+        </div>
+      
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
